@@ -46,7 +46,7 @@ for f in fold:
             print(nameU)
             for s in nameU:
                 name = name + s + "_"
-            name = name[:-1]
+            name = name[:-1].lower()
             folder = "root"
             csv_line = [folder, filename, name]
             csvfile_writer.writerow(csv_line)

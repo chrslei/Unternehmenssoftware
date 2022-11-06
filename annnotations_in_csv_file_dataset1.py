@@ -33,6 +33,6 @@ for f in fold:
         folder = xml.findtext("folder")
         filename = xml.findtext("filename")
         nameU = folder.split("-")
-        name = nameU[2]
+        name = nameU[2].lower()
         csv_line = [folder, filename, name]
         csvfile_writer.writerow(csv_line)
