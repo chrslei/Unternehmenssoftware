@@ -19,5 +19,6 @@ with open("UTSoftware/merged.csv", 'w', encoding='utf-8', newline="") as csv_mer
 data1.to_csv("UTSoftware/merged.csv", index=False, header=False, mode="a")
 data2.to_csv("UTSoftware/merged.csv", index=False, header=False, mode="a")
 
+print(data1.value_counts())
 
 
