@@ -1,6 +1,4 @@
 import os
-import numpy as np
-import pandas as pd
 from xml.etree import ElementTree
 import csv
 import glob
@@ -10,19 +8,19 @@ import glob
 # dann hier die csv file öffnen und auf write setzen
 
 csvfile = open("UTSoftware/data1.csv", 'w', encoding='utf-8')
-#hier wird der writer für die csv file erstellt
+# hier wird der writer für die csv file erstellt
 csvfile_writer = csv.writer(csvfile)
-#hier bekommt die csv file seinen Header
+# hier bekommt die csv file seinen Header
 csvfile_writer.writerow(["root", "id", "breed"])
 
-#die root wo die Annotationen stehen werden hier in die Liste fold geschrieben
+# die root wo die Annotationen stehen werden hier in die Liste fold geschrieben
 fold = []
 for folders in os.listdir("UTSoftware/Dataset_1/Low-Annotations"):
     fold.append(folders)
 
-#print(fold)
-#erste Schleife nimmt dann von low Annotations einen Ordner
-#liest dann mit glob glob die ganzen Filenames im Ordner die mit xml enden aus und erstellt eine Liste davon
+# print(fold)
+# erste Schleife nimmt dann von low Annotations einen Ordner
+# liest dann mit glob glob die ganzen Filenames im Ordner die mit xml enden aus und erstellt eine Liste davon
 for f in fold:
     r = "UTSoftware/Dataset_1/Low-Annotations/" + f + "/*.xml"
     roots = glob.glob(r)
@@ -34,5 +32,17 @@ for f in fold:
         filename = xml.findtext("filename")
         nameU = folder.split("-")
         name = nameU[2].lower()
+        #Verbesserung Hundenamen
+        if name == "basset":
+            name = "basset_hound"
+        if name == "german_short_haired_pointer":
+            name = "german_shorthaired_pointer"
+        if name == "leonberg":
+            name = "leonberger"
+        if name == "scotch_terrier":
+            name = "scottish_terrier"
+        if name == "staffordshire_bull_terrier":
+            name = "staffordshire_bullterrier"
+
         csv_line = [folder, filename, name]
         csvfile_writer.writerow(csv_line)
