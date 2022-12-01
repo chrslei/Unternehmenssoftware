@@ -3,7 +3,13 @@ import csv
 import shutil
 import os
 
-'''
+
+#function that reads the row of the csv file test.csv from column 0 and check if the image is available on this root path'''
+def check_image_is_available(original):
+    if not os.path.isfile(original):
+        return False
+    return True
+
 # Ordner für Trainingsdaten erstellen
 train_directory = "train"
 os.mkdir(train_directory)
@@ -22,12 +28,16 @@ with open(filename_train, 'r') as csvfile:
     for row in datareader:
         # Falls Pfad "root" enthält, dann löschen
         if "root" in row[0]:
-            row[0] = row[0].replace("root", "")
+            row[0] = row[0].replace("/root", "")
 
         file = row[0] + "/" + row[1]
         original = r'UTSoftware/'+file
-        target = r'train/'+row[2]+'/'+row[1]
-        shutil.copy(original, target)
+        t = check_image_is_available(original)
+        if t:
+            target = r'train/' + row[2] + '/' + row[1]
+            shutil.copy(original, target)
+        else:
+            print("File not found: " + original)
 '''
 
 # Ordner für Validierungsdaten erstellen
@@ -48,12 +58,22 @@ with open(filename_validate, 'r') as csvfile:
     for row in datareader:
         # Falls Pfad "root" enthält, dann löschen
         if "root" in row[0]:
-            row[0] = row[0].replace("root", "")
+            row[0] = row[0].replace("/root", "")
 
         file = row[0] + "/" + row[1]
         original = r'UTSoftware/'+file
-        target = r'train/'+row[2]+'/'+row[1]
-        shutil.copy(original, target)
+        t = check_image_is_available(original)
+        if t:
+            target = r'validate/' + row[2] + '/' + row[1]
+            shutil.copy(original, target)
+        else:
+            print("File not found: " + original)
+
+        
+'''
+
+
+'''
 
 # Ordner für Testdaten erstellen
 test_directory = "test"
@@ -73,9 +93,16 @@ with open(filename_test, 'r') as csvfile:
     for row in datareader:
         # Falls Pfad "root" enthält, dann löschen
         if "root" in row[0]:
-            row[0] = row[0].replace("root", "")
+            row[0] = row[0].replace("/root", "")
 
         file = row[0] + "/" + row[1]
         original = r'UTSoftware/'+file
-        target = r'train/'+row[2]+'/'+row[1]
-        shutil.copy(original, target)
+        t = check_image_is_available(original)
+        if t:
+            target = r'test/' + row[2] + '/' + row[1]
+            shutil.copy(original, target)
+        else:
+            print("File not found: " + original)
+
+'''
+
