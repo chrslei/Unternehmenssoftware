@@ -3,7 +3,7 @@ import csv
 import shutil
 import os
 
-'''
+
 # Ordner für Trainingsdaten erstellen
 train_directory = "train"
 os.mkdir(train_directory)
@@ -28,7 +28,6 @@ with open(filename_train, 'r') as csvfile:
         original = r'UTSoftware/'+file
         target = r'train/'+row[2]+'/'+row[1]
         shutil.copy(original, target)
-'''
 
 # Ordner für Validierungsdaten erstellen
 validate_directory = "validate"
@@ -52,7 +51,7 @@ with open(filename_validate, 'r') as csvfile:
 
         file = row[0] + "/" + row[1]
         original = r'UTSoftware/'+file
-        target = r'train/'+row[2]+'/'+row[1]
+        target = r'validate/'+row[2]+'/'+row[1]
         shutil.copy(original, target)
 
 # Ordner für Testdaten erstellen
@@ -77,5 +76,5 @@ with open(filename_test, 'r') as csvfile:
 
         file = row[0] + "/" + row[1]
         original = r'UTSoftware/'+file
-        target = r'train/'+row[2]+'/'+row[1]
+        target = r'test/'+row[2]+'/'+row[1]
         shutil.copy(original, target)
