@@ -1,7 +1,7 @@
 # Unternehmenssoftware
 
 ## 1. Datensätze
-Downloade beide Datensätze und speichere sie in einem Ordner UTSoftware in dem Ordner wo du das Projekt hast. 
+Downloade beide Datensätze und speichere sie in einem Unterordner "UTSoftware" in dem Ordner wo du das Projekt hast. 
 
 Datenset 1 downloade bitte low-resolution und low-annotaions in einem Unterordner Dataset_1:
 Dataset_1: https://cg.cs.tsinghua.edu.cn/ThuDogs/
@@ -11,13 +11,13 @@ Dataset_2: https://www.robots.ox.ac.uk/~vgg/data/pets/
 
 ## 2. CSV Datei erstellen und die Annotaionen auslesen und Pfade erstellen 
  Für Datensatz 1: 
- Erstelle eine leere CSV-Datei (data1.csv) in dem Ordner des Projektes. 
+ Erstelle eine leere CSV-Datei (data1.csv) in dem Ordner UTSoftware. 
  Beachte hier dazu, dass du den Code in der Python File annotaions_in_csv_file_dataset1 im folgenden anpassen musst, wenn du andere Dateinamen verwendest: 
         ....    csvfile = open("Ordnername/CSV_Dateiname.csv", 'w', encoding='utf-8')
  Führe das Python File aus. 
  
  Für Datensatz 2: 
- Erstelle eine leere CSV-Datei (data2.csv) in dem Ordner des Projektes. 
+ Erstelle eine leere CSV-Datei (data2.csv) in dem Ordner UTSoftware. 
  Beachte hier dazu, dass du den Code in der Python File annotaions_in_csv_file_dataset1 im folgenden anpassen musst, wenn du andere Dateinamen verwendest: 
          ....    csvfile = open("Ordnername/CSV_Dateiname.csv", 'w', encoding='utf-8')
  Führe das Python File aus. 
