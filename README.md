@@ -35,3 +35,11 @@ Hier einfach die create_train_validate_test_directories.py ausführen.
 ## 6. merge Hunderassen_ordner die ähnlich geschrieben wurden in einen Ordner 
 Führe mergeDirectory.py aus. 
 
+## 7. zippe die Ordner train, test, validate und lade sie in dein Google Drive hoch 
+
+## für das nicht vortrainierte Modell: https://github.com/MilenaKalo/breedClassification.git 
+hier dann ein colab Notebook und den Code einfügen und ausführen.
+
+## für das vortrainierte Modell:
+hier dann ein colab Notebook und den Code einfügen und ausführen.
+
