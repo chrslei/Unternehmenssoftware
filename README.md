@@ -37,8 +37,8 @@ Führe mergeDirectory.py aus.
 
 ## 7. zippe die Ordner train, test, validate und lade sie in dein Google Drive hoch 
 
-## für das nicht vortrainierte Modell: https://github.com/MilenaKalo/breedClassification.git 
-hier dann ein colab Notebook erstellen und den Code einfügen und ausführen.
+## für das nicht vortrainierte Modell: hier führst du das Python File aus: main.py
+
 
 ## für das vortrainierte Modell: https://github.com/MilenaKalo/preTrainedModel.git
 hier dann ein colab Notebook erstellen und den Code einfügen und ausführen.
